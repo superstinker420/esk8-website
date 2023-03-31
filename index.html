@@ -1,1 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Electric Skateboard Build Process</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+			margin: 0;
+		}
+
+		.header {
+			background-color: #333;
+			color: #fff;
+			padding: 15px;
+			text-align: center;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+		}
+
+		.timeline {
+			position: relative;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		.timeline::after {
+			content: '';
+			position: absolute;
+			width: 6px;
+			background-color: #333;
+			top: 0;
+			bottom: 0;
+			left: 50%;
+			margin-left: -3px;
+		}
+
+		.timeline-item {
+			padding: 10px 0;
+			position: relative;
+		}
+
+		.timeline-item::after {
+			content: '';
+			position: absolute;
+			background-color: #333;
+			top: 15px;
+			right: -17px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			z-index: 1;
+		}
+
+		.timeline-content {
+			padding: 20px;
+			background-color: #f1f1f1;
+			position: relative;
+			border-radius: 6px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+		}
+
+		.timeline-content h2 {
+			margin-top: 0;
+		}
+
+		.timeline-content p {
+			margin: 10px 0;
+		}
+
+		.timeline-content img {
+			max-width: 100%;
+			height: auto;
+			margin: 10px 0;
+		}
+
+		.timeline-item:nth-child(even) .timeline-content {
+			margin-left: 20px;
+		}
+
+		.timeline-item:nth-child(even)::after {
+			left: -16px;
+		}
+
+		@media screen and (max-width: 600px) {
+			.timeline::after {
+				left: 31px;
+			}
+
+			.timeline-item {
+				margin-bottom: 40px;
+			}
+
+			.timeline-item::after {
+				top: -17px;
+				right: 15px;
+				left: auto;
+			}
+
+			.timeline-content {
+				padding: 10px;
+				margin-top: 10px;
+			}
+
+			.timeline-item:nth-child(even) .timeline-content {
+				margin-left: 0;
+				margin-right: 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<h1>Electric Skateboard Build Process</h1>
+	</header>
+	<div class="container">
+				<div class="timeline">
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<h2>Research and Inspiration</h2>
+					<p>Before starting the build process, it's important to do some research and gather inspiration from other electric skateboard builds. This will help you decide on the components you'll need and the design you want to achieve.</p>
+					<img src="research.jpg" alt="Research and Inspiration">
+				</div>
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<h2>Battery Build</h2>
+					<p>The battery is one of the most important components of an electric skateboard. In this step, you'll need to assemble the battery pack and ensure it's properly wired and insulated.</p>
+					<img src="battery.jpg" alt="Battery Build">
+				</div>
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<h2>Electronics</h2>
+					<p>The electronics are what make your electric skateboard move. You'll need to install a motor, speed controller, and wireless remote control. Make sure everything is properly connected and tested before moving on to the next step.</p>
+					<img src="electronics.jpg" alt="Electronics">
+				</div>
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<h2>Putting Everything Together</h2>
+					<p>Now it's time to put all the components together and test the electric skateboard. Make sure everything is securely mounted and the wiring is properly organized. Once you've tested the skateboard and everything is working correctly, you're ready to hit the streets!</p>
+					<img src="final.jpg" alt="Putting Everything Together">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
 
