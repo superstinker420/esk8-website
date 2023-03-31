@@ -6,6 +6,105 @@
 	<title>Build Process of an Electric Skateboard</title>
 	<style>
 		/* CSS styles here */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background-color: #f7f7f7;
+}
+
+h1 {
+	text-align: center;
+	padding: 2rem 0;
+	font-size: 2rem;
+	color: #333;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.timeline {
+	position: relative;
+	margin: 0 auto;
+}
+
+.timeline-item {
+	position: relative;
+	padding: 2rem 0;
+}
+
+.timeline-content {
+	position: relative;
+	max-width: 500px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 1.5rem;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 30px;
+	height: 30px;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	border: 2px solid #333;
+	border-radius: 50%;
+}
+
+.timeline-item::after {
+	content: attr(data-text);
+	position: absolute;
+	top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #fff;
+	padding: 0 1rem;
+	font-size: 1rem;
+	color: #333;
+	font-weight: bold;
+	border-radius: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:last-child::before {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.timeline-item::after {
+		font-size: 0.8rem;
+		top: 30px;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 1.5rem auto;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+	.timeline-item {
+		padding: 1rem 0;
+	}
+	.timeline-content {
+		max-width: 100%;
+	}
+}
+
+
 	</style>
 </head>
 <body>
@@ -46,6 +145,36 @@
 	</main>
 	<script>
 		// JavaScript code here
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+// function to check if element is in view
+function isInView(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// function to add animation class to element in view
+function animateOnScroll() {
+  timelineItems.forEach((item) => {
+    if (isInView(item)) {
+      item.classList.add("animate");
+    } else {
+      item.classList.remove("animate");
+    }
+  });
+}
+
+// event listener for scroll
+window.addEventListener("scroll", animateOnScroll);
+
+// run animation on load
+animateOnScroll();
+
 	</script>
 </body>
 </html> 
